@@ -1,0 +1,9 @@
+{
+  "name": "functions",
+  "description": "Process",
+  "dependencies": {
+    "read-file": "*",
+		"write-file": "*"
+  },
+  "private": true
+}

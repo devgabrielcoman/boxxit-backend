@@ -1,0 +1,27 @@
+{
+	"compilerOptions": {
+		"target": "es5",
+		"module": "commonjs",
+		"noImplicitAny": false,
+		"removeComments": true,
+		"preserveConstEnums": true,
+		"sourceMap": false,
+		"lib": [ "es7", "dom", "es2015" ],
+		"outDir": "../build"
+	},
+	"include":[
+		"index.ts",
+		"library/*",
+		"library/aux/*",
+		"library/network/*",
+		"library/models/*",
+		"library/parse/*",
+		"library/transform/*",
+		"library/sql/*",
+		"library/database/*",
+		"server/*"
+	],
+	"exclude": [
+		"node_modules"
+	]
+}

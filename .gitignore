@@ -56,4 +56,7 @@ typings/
 
 # dotenv environment variables file
 .env
-
+node_modules/
+build/
+services/node_modules
+.env

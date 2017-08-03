@@ -1,0 +1,14 @@
+use boxxit;
+set FOREIGN_KEY_CHECKS = 0;
+
+update Users set token = 'coQNwwgAmvw:APA91bE3uCdhNPE_sj0f56BXKUWsGSPRiV7AAlBaAyaGrJ0oKVqpQfx6lAQB9Z14txdfBDvH1G1KYJtuU3E4kZqcaoynqNz6W5J1jOezv-PP4aGMdmotCclnDM8400a737XRWBYWuGkT' where userId = '682939218565803';
+update Users set token = 'd4EiKxCBdt4:APA91bGtHjN3IMFA5DY3pXX7DkFPPkMdNXKneVmc0nDYpl7Uw_mk665QqNa2ylah0lA6VsTKLPLPNGHPWe0H8MnvejL5VBifjVDIJgsAdrC6W-7gnvcco78H44orwLq_JpeC6k-f3RNR' where userId = '1675817612435345';
+update Users set token = 'c8dUsuRqPmY:APA91bFlVy4vAcTfu7gvBh9IMAUJcx9lT6ojRjYk8tmvUoaGURX17sMtD7pHQP6Zqf-txtk8SATd1t0zTHqMs3yVgB-WuVkHeJYTBLWbrtZ-hiyzjJTnn8AXoUINLMhJKpQHwV6VullV' where userId = '1587019804664865';
+update Users set token = 'fO-UuJoZsqg:APA91bF-K6Jwxb_lDYX4ncxFnTUi3YNzkRhO5lmPcfzOxjVYUekClbQJCfVJuikXItuhb6JK8TStEbnujn0r7uae8s5QpmmyY2wH6ch5kNqFN-p_z259kttuNX-l3WhPJGbg3g9SbhXU' where userId = '114695425740841';
+update Users set token = 'ejkfNxpk418:APA91bG-eX71fFsvZcZ6Sj9HactBapWKzx-SovdKlvgZYw4KhDF5mYqlE_C5Y5ZqUXf_kXNheoT1Vw5SRaillOs7W0ntFYbqAn7S16TjU55DO5IrYN2k794unlJCFu7ejoLSG0wSlwqW' where userId = '10211675294590866';
+update Users set token = 'dZhfwVeeLsM:APA91bFywWScZ12dv40gLfN6waawTEhiCquD4tfbueYAwWFlCQ3hJb0G2-22uah322k6_fmXS006G4v4tnR1Jn_8iQsdH86TCJPNE3N8Kb27ZurbH7W-T4oPbaOFGJ-wIgHg1ACy3YrB' where userId = '10210377903217064';
+update Users set token = 'dH6ufg3Acpg:APA91bEWiZ5RVOrGFtVoiPJdBmyn7yaHu4AsKPzf19pulkZDOfs4_krSR_hepdUfWmE3KR2AidkRLMnvUp_r7hWtlqVLH9xjpcSNOVs1w73-lXXw9vbWXA4XkrHCbtjgLtSizMgzYuMP' where userId = '10203560643491925';
+update Users set token = 'fTCwEHz9k9k:APA91bFWUCgUDTNgH1xJwFcOxLBmWxGtfes70DwkwBZQ6zA6mjxmnCwkayGd8Vcv1ER6oVA9pVvOKuUg4BJ5fqLJoaYVFTV6AVPvBQaaqOlYit9-Wl_UsWq9z5hm5Z-QZ-4YbjKSsNNL' where userId = '10155472193364294';
+update Users set token = 'cmFc1CpKvXM:APA91bFAloqeIlEHxKKS3E0v5XB_bDr4bMW2Ef5l-sPxGGU2JJfk5ezPly20lEvPi2e21TTPHCuchsh0OQ-yzVJoKb38c2iv8co8Y34gmd0Ike6jhW9yZ86PO_AhzXHXFler_hGrapVV' where userId = '10100612427833520';
+
+set FOREIGN_KEY_CHECKS = 1;

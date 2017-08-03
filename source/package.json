@@ -1,0 +1,17 @@
+{
+  "name": "Boxxit",
+  "description": "Boxxit",
+	"main": "index.js",
+  "dependencies": {
+    "mysql": "*",
+		"promise-mysql": "*",
+		"request": "*",
+    "jssha": "*",
+    "elementtree": "*",
+    "moment": "*",
+		"dotenv": "*",
+		"express": "*",
+		"uuid": "*"
+  },
+  "private": true
+}
