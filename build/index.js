@@ -1,0 +1,26 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var populate_user_profile_1 = require("./server/populate-user-profile");
+var populate_products_1 = require("./server/populate-products");
+var get_favourite_products_for_user_1 = require("./server/get-favourite-products-for-user");
+var get_products_for_user_1 = require("./server/get-products-for-user");
+var delete_product_1 = require("./server/delete-product");
+var save_product_1 = require("./server/save-product");
+var save_token_1 = require("./server/save-token");
+var get_upcoming_birthdays_1 = require("./server/get-upcoming-birthdays");
+var dotenv = require("dotenv");
+dotenv.config();
+var express = require("express");
+var app = express();
+app.get('/populateUserProfile', populate_user_profile_1.populateUserProfile);
+app.get('/populateProducts', populate_products_1.populateProducts);
+app.get('/saveToken', save_token_1.saveToken);
+app.get('/saveProduct', save_product_1.saveProduct);
+app.get('/deleteProduct', delete_product_1.deleteProduct);
+app.get('/getProductsForUser', get_products_for_user_1.getProductsForUser);
+app.get('/getFavouriteProductsForUser', get_favourite_products_for_user_1.getFavouriteProductsForUser);
+app.get('/getUpcomingBirthdays', get_upcoming_birthdays_1.getUpcomingBirthdays);
+app.use(express.static('static'));
+app.listen(process.env.PORT, process.env.BIND_IP, function () {
+    console.log('App listening on ' + process.env.BIND_IP + ':' + process.env.PORT);
+});
