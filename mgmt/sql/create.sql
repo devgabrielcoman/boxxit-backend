@@ -49,6 +49,18 @@ create table if not exists Categories (
     primary key (categId)
 );
 
+/**
+ * Create forbidden Categories Table
+ */
+create table if not exists Forbidden (
+	forbidId int not null auto_increment,
+	categId varchar(80) not null,
+	primary key (forbidId),
+	foreign key (categId) references Categories(categId) on update cascade
+);
+
+-- insert into Forbidden (categId) values ('rateg PG-13');
+
 /********************************************************
  * Create linker tables
  *******************************************************/
@@ -113,9 +125,9 @@ create table if not exists Favourites (
 /*
  * Create a view that contains nr products for each category
  */
-create view CategoryNrProducts 
+create view CategoryNrProducts
 as
-select 
+select
 	a.categId as id,
     a.isValuable as isValuable,
     a.category as category,
@@ -124,4 +136,6 @@ select
     count(b.asin) as nrProducts
 from boxxit.Categories a
 left join boxxit.CategoriesProducts b on a.categId = b.categId
+left join boxxit.Forbidden c on a.categId = c.categId
+where c.categId is null
 group by a.categId

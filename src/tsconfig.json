@@ -7,7 +7,7 @@
 		"preserveConstEnums": true,
 		"sourceMap": false,
 		"lib": [ "es7", "dom", "es2015" ],
-		"outDir": "../build"
+		"outDir": "../dist"
 	},
 	"include":[
 		"index.ts",
