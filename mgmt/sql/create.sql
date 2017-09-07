@@ -59,7 +59,7 @@ create table if not exists Forbidden (
 	foreign key (categId) references Categories(categId) on update cascade
 );
 
--- insert into Forbidden (categId) values ('rateg PG-13');
+-- insert into Forbidden (categId) values ('rated PG-13');
 
 /********************************************************
  * Create linker tables

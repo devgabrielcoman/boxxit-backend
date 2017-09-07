@@ -208,7 +208,7 @@ export class SqlRequest implements Request {
 	//
 	// get categories to populate
 	static getEmptyCategories(): SqlRequest {
-		let sql = `select id, name, category, searchIndex from boxxit.CategoryNrProducts where nrProducts = 0 and isValuable = true and name <> 'null' limit 10`
+		let sql = `call boxxit.getEmptyCategories();`
 		return new SqlRequest(sql)
 	}
 

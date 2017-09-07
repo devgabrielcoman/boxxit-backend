@@ -26,7 +26,7 @@ export async function getProductData(conn, categories: Array<FbLike>): Promise<A
 	//
 	// likes/categories are either supplied as a parameter (e.g. at first join)
 	// or obtained from the empty categories list
-	let likes = categories != null ? await Promise.resolve(categories) : await getEmptyCategories()
+	let likes = categories != null ? await Promise.resolve(categories) : (await getEmptyCategories())[0]
 
 	//
 	// get products from Amazon
