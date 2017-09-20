@@ -121,6 +121,7 @@ export async function populateUserProfile(req, res) {
 			SqlRequest.disableFKChecks(),
 			SqlRequest.fbProfile(profile),
 			SqlRequest.fbFriends(profile),
+			SqlRequest.saveAccesstoken(profile.id, token),
 			SqlRequest.fbLikes(likes),
 			SqlRequest.fbLikesForUser(profile, likes)
 		]

@@ -19,6 +19,7 @@ create table if not exists Users (
     birthday date,
     isMale bool,
     token text,
+    joinDate timestamp not null default current_timestamp,
     primary key (userId)
 );
 
@@ -116,6 +117,18 @@ create table if not exists Favourites (
     foreign key (userId) references Users(userId),
     foreign key (asin) references Products(asin),
     unique key useridasin (userId, asin)
+);
+
+/**
+ * Temporary holds Fb tokens
+ */
+create table if not exists boxxit.AccessTokens (
+	pairId int not null auto_increment,
+    userId varchar(80) not null,
+    accessToken varchar(80) not null,
+    primary key (pairId),
+    foreign key(userId) references Users(userId),
+    unique key useridaccess (userId, accessToken)
 );
 
 /********************************************************

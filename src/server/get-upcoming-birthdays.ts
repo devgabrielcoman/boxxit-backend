@@ -21,25 +21,25 @@ export async function getUpcomingBirthdays (req, res) {
 		// execute query to db
 		let dbReq = new DbRequest(sql)
 		let dbResponse = await new DbTask(conn).execute(dbReq)
-
 		//
 		// close connection
 		conn.end()
+		res.status(200).json(dbResponse)
 
-		let notifs = dbResponse[0].map(res => {
-			return new BirthdayNotification(res['wisherToken'], res['friendId'], res['message'])
-		})
-
+		// let notifs = dbResponse[0].map(res => {
+		// 	return new BirthdayNotification(res['wisherToken'], res['friendId'], res['message'])
+		// })
 		//
-		// format response
-		let response = {
-			'data': notifs,
-			'count': notifs.length,
-			'status': 200,
-			'done': true
-		}
-
-		res.status(200).json(response)
+		// //
+		// // format response
+		// let response = {
+		// 	'data': notifs,
+		// 	'count': notifs.length,
+		// 	'status': 200,
+		// 	'done': true
+		// }
+		//
+		// res.status(200).json(response)
 
 	} catch (e) {
 		res.status(500).send(e)

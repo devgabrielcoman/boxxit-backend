@@ -63,6 +63,15 @@ export class SqlRequest implements Request {
 	}
 
 	//
+	// static method to save an access token
+	static saveAccesstoken(id: String, token: String): SqlRequest {
+
+		var sql = `update boxxit.AccessTokens set accessToken = '` + token + `' where userId = '` + id + `';`;
+
+		return new SqlRequest(sql)
+	}
+
+	//
 	// static method that processes FbFriends data into SQL queries
 	static fbFriends(profile: FbProfile): SqlRequest {
 
