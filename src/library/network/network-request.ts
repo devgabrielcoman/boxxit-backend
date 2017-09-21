@@ -1,6 +1,7 @@
 //
 // generic network request options
 import { Request } from '../request'
+import { BirthdayNotification } from '../models'
 
 //
 // import extern
@@ -130,7 +131,7 @@ export class NetworkRequest implements Request {
 
 	//
 	// static factor method to get notification
-	static sendBirthdayNotification(token: string, friendId: string, message: string): NetworkRequest {
+	static sendBirthdayNotification(notification: BirthdayNotification): NetworkRequest {
 		return new NetworkRequest(
 			'POST',
 			'https://',
@@ -144,12 +145,12 @@ export class NetworkRequest implements Request {
 			},
 			{
 				'notification' :  {
-					'body': message,
+					'body': notification.message,
 				},
 				'data': {
-					'friendId': friendId
+					'friendId': notification.friendId
 				},
-				'to' : token
+				'to' : notification.wisherToken
 			}
 		)
 	}

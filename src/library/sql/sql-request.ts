@@ -230,8 +230,8 @@ export class SqlRequest implements Request {
 
 	//
 	// get upcoming birthdays
-	static getUpcomingBirthdays(): SqlRequest {
-		let sql = `call boxxit.getUsersToBeNotifiedOfUpcomingBirthdays()`
+	static getUpcomingBirthdays(days: number): SqlRequest {
+		let sql = `call boxxit.getUsersToBeNotifiedOfUpcomingBirthdays(` + days + `)`
 		return new SqlRequest(sql)
 	}
 }

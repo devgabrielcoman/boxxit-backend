@@ -5,7 +5,8 @@ import { getProductsForUser } from './server/get-products-for-user'
 import { deleteProduct } from './server/delete-product'
 import { saveProduct} from './server/save-product'
 import { saveToken } from './server/save-token'
-import { getUpcomingBirthdays } from './server/get-upcoming-birthdays'
+import { notifyOneWeek } from './server/notify-birthdays'
+import { notifyTwoWeeks } from './server/notify-birthdays'
 import * as uuidv4 from 'uuid'
 
 //
@@ -27,7 +28,8 @@ app.get('/saveProduct', saveProduct)
 app.get('/deleteProduct', deleteProduct)
 app.get('/getProductsForUser', getProductsForUser)
 app.get('/getFavouriteProductsForUser', getFavouriteProductsForUser)
-app.get('/getUpcomingBirthdays', getUpcomingBirthdays)
+app.get('/notifyOneWeek', notifyOneWeek)
+app.get('/notifyTwoWeeks', notifyTwoWeeks)
 app.use(express.static('static'))
 
 app.listen(process.env.PORT, process.env.BIND_IP, function () {
