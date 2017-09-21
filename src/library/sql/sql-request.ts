@@ -64,9 +64,9 @@ export class SqlRequest implements Request {
 
 	//
 	// static method to save an access token
-	static saveAccesstoken(id: String, token: String): SqlRequest {
+	static saveAccessToken(id: String, token: String): SqlRequest {
 
-		var sql = `update boxxit.AccessTokens set accessToken = '` + token + `' where userId = '` + id + `';`;
+		var sql = `replace into boxxit.AccessTokens (userId, accessToken) values ('` + id + `','` + token + `');`
 
 		return new SqlRequest(sql)
 	}

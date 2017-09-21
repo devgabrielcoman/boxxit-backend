@@ -2,17 +2,10 @@
 DELIMITER //
 create procedure getUsersToBeNotifiedOfUpcomingBirthdays()
 select
--- 	b.user2Id as birthdayWisherId,
---  	c.name as birthdayWisherName,
---  	c.token as birthdayWisherToken,
---  	c.email as birthdayWisherEmail,
---  	a.userId as birthdayUserId,
---  	a.name as birthdayUserName,
---  	a.daysTillBirthday,
+    c.userId,
     c.token as wisherToken,
- --    c.email as email,
     a.userId as friendId,
-    concat("Hey ", c.name, ", your friend ", a.name, " has a birthday coming up in ", a.daysTillBirthday, " days. Here's what gifts Boxxit recommends!") as message
+    concat("Hey ", a.name, "'s birthday is near. Here's what Boxxit recommends!") as message
 from
 	(select
 		userId,

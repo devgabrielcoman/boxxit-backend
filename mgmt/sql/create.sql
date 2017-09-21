@@ -125,7 +125,7 @@ create table if not exists Favourites (
 create table if not exists boxxit.AccessTokens (
 	pairId int not null auto_increment,
     userId varchar(80) not null,
-    accessToken varchar(80) not null,
+    accessToken text not null,
     primary key (pairId),
     foreign key(userId) references Users(userId),
     unique key useridaccess (userId, accessToken)
