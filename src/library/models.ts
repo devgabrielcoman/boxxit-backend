@@ -73,6 +73,7 @@ export class Product {
 	isOwn: boolean
 
 	constructor(asin: string = null, title: string = null, amount: number = 0, price: string = '£0', click: string = null, smallIcon: string = null, largeIcon: string = null, categId: string = null, isFavourite: boolean = false, isOwn: boolean = false) {
+		console.log(isFavourite, isOwn)
 		this.asin = asin
 		this.title = title
 		this.amount = amount

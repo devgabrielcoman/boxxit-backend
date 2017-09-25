@@ -17,7 +17,7 @@ from
 	select
 		a1.categId,
         b1.name,
-        true as isOwn
+        `True` as isOwn
 	from boxxit.UserCategories a1
     left join boxxit.Categories b1 on a1.categId = b1.categId
     left join boxxit.Forbidden c1 on a1.categId = c1.categId
@@ -32,7 +32,7 @@ union all
 	select
 		a1.categId,
         b1.name,
-        true as isOwn
+        `True` as isOwn
 	from boxxit.UserCategories a1
     left join boxxit.Categories b1 on a1.categId = b1.categId
     left join boxxit.Forbidden c1 on a1.categId = c1.categId
@@ -47,7 +47,7 @@ union all
 	select
 		a1.categId,
         a1.name,
-        false as isOwn
+        `False` as isOwn
 	from boxxit.Categories a1
     left join boxxit.Forbidden c1 on a1.categId = c1.categId
     where
