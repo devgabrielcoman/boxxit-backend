@@ -48,7 +48,7 @@ export class SqlRequest implements Request {
 			bday = `NULL`
 		}
 
-		let sql = `replace into boxxit.Users (userId, name, email, isMale, birthday) values (` + userId + `, ` + name + `, ` + email + `, ` + gender + `, ` + bday + `);`
+		var sql = `insert into boxxit.Users (userId, name, email, isMale, birthday) values (` + userId + `, ` + name + `, ` + email + `, ` + gender + `, ` + bday + `) on duplicate key update name=Values(name), email=Values(email), isMale=Values(isMale), birthday=Values(birthday);`
 
 		return new SqlRequest(sql)
 	}

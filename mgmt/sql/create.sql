@@ -14,13 +14,13 @@ set FOREIGN_KEY_CHECKS = 0;
  */
 create table if not exists Users (
 	userId varchar(80) not null unique,
-    name varchar(255) character set utf8 collate utf8_unicode_ci,
-    email varchar(255),
-    birthday date,
-    isMale bool,
-    token text,
-    joinDate timestamp not null default current_timestamp,
-    primary key (userId)
+  name varchar(255) character set utf8 collate utf8_unicode_ci,
+  email varchar(255),
+  birthday date,
+  isMale bool,
+  token text,
+  joinDate timestamp not null default current_timestamp,
+  primary key (userId)
 );
 
 /**
@@ -124,10 +124,10 @@ create table if not exists Favourites (
  */
 create table if not exists boxxit.AccessTokens (
 	pairId int not null auto_increment,
-    userId varchar(80) not null,
-    accessToken text not null,
-    primary key (pairId),
-    foreign key(userId) references Users(userId)
+  userId varchar(80) not null,
+  accessToken text not null,
+  primary key (pairId),
+  foreign key(userId) references Users(userId)
 );
 
 /********************************************************
