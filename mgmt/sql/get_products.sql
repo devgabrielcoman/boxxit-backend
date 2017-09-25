@@ -10,12 +10,14 @@ select
 	d.click as click,
 	d.smallImage as smallIcon,
 	d.bigImage as largeIcon,
-	e.asin as isFavourite
+	e.asin as isFavourite,
+    b.isOwn
 from
 ((
 	select
 		a1.categId,
-        b1.name
+        b1.name,
+        true as isOwn
 	from boxxit.UserCategories a1
     left join boxxit.Categories b1 on a1.categId = b1.categId
     left join boxxit.Forbidden c1 on a1.categId = c1.categId
@@ -29,7 +31,8 @@ union all
 (
 	select
 		a1.categId,
-        b1.name
+        b1.name,
+        true as isOwn
 	from boxxit.UserCategories a1
     left join boxxit.Categories b1 on a1.categId = b1.categId
     left join boxxit.Forbidden c1 on a1.categId = c1.categId
@@ -43,7 +46,8 @@ union all
 (
 	select
 		a1.categId,
-        a1.name
+        a1.name,
+        false as isOwn
 	from boxxit.Categories a1
     left join boxxit.Forbidden c1 on a1.categId = c1.categId
     where

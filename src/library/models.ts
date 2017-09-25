@@ -70,8 +70,9 @@ export class Product {
 	largeIcon: string
 	categId: string
 	isFavourite: boolean
+	isOwn: boolean
 
-	constructor(asin: string = null, title: string = null, amount: number = 0, price: string = '£0', click: string = null, smallIcon: string = null, largeIcon: string = null, categId: string = null, isFavourite: boolean = false) {
+	constructor(asin: string = null, title: string = null, amount: number = 0, price: string = '£0', click: string = null, smallIcon: string = null, largeIcon: string = null, categId: string = null, isFavourite: boolean = false, isOwn: boolean = false) {
 		this.asin = asin
 		this.title = title
 		this.amount = amount
@@ -81,6 +82,7 @@ export class Product {
 		this.largeIcon = largeIcon
 		this.categId = categId
 		this.isFavourite = isFavourite
+		this.isOwn = isOwn
 	}
 }
 

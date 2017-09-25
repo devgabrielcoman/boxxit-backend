@@ -38,7 +38,7 @@ export async function getProductsForUser(req, res) {
 		//
 		// return products with all associated info
 		let products = dbResponse[0].map(res => {
-			return new Product(res['asin'], res['title'], res['amount'], res['price'], res['click'], res['smallIcon'], res['largeIcon'], res['category'], res['isFavourite'] != null)
+			return new Product(res['asin'], res['title'], res['amount'], res['price'], res['click'], res['smallIcon'], res['largeIcon'], res['category'], res['isFavourite'] != null, res['isOwn'])
 		})
 
 		//
