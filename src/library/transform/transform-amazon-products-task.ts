@@ -38,14 +38,51 @@ export class TransformAmazonProductsTask implements Task <any, Array<Product>> {
 			// get prices
 			let amount = 0
 			let price = ''
+
+			//
+			// try to get offers
 			offers.forEach(item => {
 				price = item.findtext('./OfferListing/Price/FormattedPrice')
 				try {
 					amount = Number(item.findtext('./OfferListing/Price/Amount'))
 				} catch (e) {
-					// do nothing
+
 				}
 			})
+
+			//
+			// try go get lowest price
+			if (amount == 0 || isNaN(amount)) {
+				price = item.findtext('./OfferSummary/LowestUsedPrice/FormattedPrice')
+				try {
+					amount = Number(item.findtext('./OfferSummary/LowestUsedPrice/Amount'))
+				} catch (e) {
+					// do nothing
+				}
+			}
+
+			//
+			// try to get normal price
+			if (amount == 0 || isNaN(amount)) {
+				console.log('hot here')
+				price = item.findtext('./OfferSummary/LowestNewPrice/FormattedPrice')
+				try {
+					amount = Number(item.findtext('./OfferSummary/LowestNewPrice/Amount'))
+				} catch (e) {
+					// do nothing
+				}
+			}
+
+			//
+			// get backup prices
+			if (amount == 0 || isNaN(amount)) {
+				price = item.findtext('./ItemAttributes/ListPrice/FormattedPrice')
+				try {
+					amount = Number(item.findtext('./ItemAttributes/ListPrice/Amount'))
+				} catch (e) {
+					// do nothing
+				}
+			}
 
 			//
 			// return new product object

@@ -10,9 +10,6 @@ import { notifyTwoWeeks } from './server/notify-birthdays'
 import { updateProductData } from './server/update-product-data'
 import * as uuidv4 from 'uuid'
 
-import { NetworkRequest } from './library/network/network-request'
-import { NetworkTask } from './library/network/network-task'
-
 //
 // create express app
 import * as dotenv from 'dotenv'
@@ -37,10 +34,21 @@ app.get('/notifyOneWeek', notifyOneWeek)
 app.get('/notifyTwoWeeks', notifyTwoWeeks)
 app.use(express.static('static'))
 
+// import { NetworkRequest } from './library/network/network-request'
+// import { NetworkTask } from './library/network/network-task'
+// import { ParseXMLTask } from './library/parse/parse-xml-task'
+// import { TransformAmazonProductsTask} from './library/transform/transform-amazon-products-task'
+//
 // app.get('/test_prod', async function (req, res) {
-// 	// let request = NetworkRequest.itemLookup(['0091951763'])
-// 	// let data = await new NetworkTask().execute(request)
-// 	// res.status(200).send(data)
+// 	try {
+// 		let request = NetworkRequest.itemLookup(['0020531907', 'B00HMZP7AY'])
+// 		let xmlStr = await new NetworkTask().execute(request)
+// 		let xmlReq = await new ParseXMLTask().execute(xmlStr)
+// 		let products = await new TransformAmazonProductsTask(null).execute(xmlReq)
+// 		res.status(200).send(products)
+// 	}	catch(e) {
+// 		res.status(400).send(e)
+// 	}
 // })
 
 app.listen(process.env.PORT, process.env.BIND_IP, function () {

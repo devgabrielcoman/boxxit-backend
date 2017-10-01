@@ -8,6 +8,8 @@ import { NetworkTask } from '../library/network/network-task'
 import { ParseXMLTask } from '../library/parse/parse-xml-task'
 import { TransformAmazonProductsTask } from '../library/transform/transform-amazon-products-task'
 
+declare var Promise: any;
+
 export async function updateProductData (req, res) {
 
 	try {
@@ -64,7 +66,10 @@ export async function updateProductData (req, res) {
 				'operation': 'updateProductData'
 			},
 			'done': true,
-			'result': asins
+			'result': {
+				'asins': asins,
+				'products': products
+			}
 		}
 
 		res.status(200).json(response)

@@ -97,7 +97,7 @@ export class NetworkRequest implements Request {
 				'Operation': 'ItemSearch',
 				'SearchIndex': searchIndex,
 				'Timestamp': aux.getCurrentDate(),
-				'ResponseGroup': 'ItemIds,Images,Small,Offers',
+				'ResponseGroup': 'ItemIds,Images,Small,Offers,ItemAttributes,OfferSummary',
 				'AWSAccessKeyId': process.env.AWS_ID,
 				'AssociateTag': process.env.AWS_TAG,
 				'MinimumPrice': '500',
@@ -120,7 +120,7 @@ export class NetworkRequest implements Request {
 				'Service': 'AWSECommerceService',
 				'Operation': 'ItemLookup',
 				'Timestamp': aux.getCurrentDate(),
-				'ResponseGroup': 'ItemIds,Images,Small,Offers',
+				'ResponseGroup': 'ItemIds,Images,Small,Offers,ItemAttributes,OfferSummary',
 				'AWSAccessKeyId': process.env.AWS_ID,
 				'AssociateTag': process.env.AWS_TAG,
 				'ItemId': items.join(',')
