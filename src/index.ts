@@ -9,6 +9,9 @@ import { notifyOneWeek } from './server/notify-birthdays'
 import { notifyTwoWeeks } from './server/notify-birthdays'
 import * as uuidv4 from 'uuid'
 
+import { NetworkRequest } from './library/network/network-request'
+import { NetworkTask } from './library/network/network-task'
+
 //
 // create express app
 import * as dotenv from 'dotenv'
@@ -31,6 +34,12 @@ app.get('/getFavouriteProductsForUser', getFavouriteProductsForUser)
 app.get('/notifyOneWeek', notifyOneWeek)
 app.get('/notifyTwoWeeks', notifyTwoWeeks)
 app.use(express.static('static'))
+
+// app.get('/test_prod', async function (req, res) {
+// 	let request = NetworkRequest.keywordSearch('Red Hot Chili Peppers', 'DVD')
+// 	let data = await new NetworkTask().execute(request)
+// 	res.status(200).send(data)
+// })
 
 app.listen(process.env.PORT, process.env.BIND_IP, function () {
   console.log('App listening on ' + process.env.BIND_IP + ':' + process.env.PORT)

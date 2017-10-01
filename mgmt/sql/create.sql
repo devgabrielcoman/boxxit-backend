@@ -127,7 +127,8 @@ create table if not exists boxxit.AccessTokens (
   userId varchar(80) not null,
   accessToken text not null,
   primary key (pairId),
-  foreign key(userId) references Users(userId)
+  foreign key(userId) references Users(userId),
+	unique key usrIdCon (userId)
 );
 
 /********************************************************
