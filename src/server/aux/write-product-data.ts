@@ -63,7 +63,6 @@ export async function writeProductData(conn, productResults: Array<ProductResult
 		} else if (result.throttleError) {
 			throttled.push(result.categName)
 		} else {
-			console.log('got here')
 			successfull.push(result.categName)
 		}
 	})

@@ -34,6 +34,7 @@ create table if not exists Users (
     click text character set utf8 collate utf8_unicode_ci,
     smallImage text character set utf8 collate utf8_unicode_ci,
     bigImage text character set utf8 collate utf8_unicode_ci,
+		lastUpdated timestamp not null default current_timestamp,
     primary key (asin)
  );
 

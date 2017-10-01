@@ -215,6 +215,13 @@ export class SqlRequest implements Request {
 	}
 
 	//
+	// get products that need to be updated
+	static getProductsToUpdate (): SqlRequest {
+		let sql = `call boxxit.getProductsToUpdate();`
+		return new SqlRequest(sql)
+	}
+
+	//
 	// get categories to populate
 	static getEmptyCategories(): SqlRequest {
 		let sql = `call boxxit.getEmptyCategories();`

@@ -23,8 +23,6 @@ export async function deleteProduct(req, res) {
 		let sqlReq = SqlRequest.deleteProduct(fbId, asin)
 		let sql = await new SqlTask().execute(sqlReq)
 
-		console.log(sql)
-
 		//
 		// execute query to db
 		let dbReq = new DbRequest(sql)
