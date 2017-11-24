@@ -44,39 +44,44 @@ export async function populateUserProfile(req, res) {
 		let categs = {
 			// Books
 			'Books & Magazines': 'Books',
+			'Article': 'Books',
 			'Book': 'Books',
+			'Book Genre': 'Books',
 			'Book Series': 'Books',
+			'Magazine': 'Books',
+			'Newspaper': 'Books',
 			'Author': 'Books',
-			'Writer': 'Books',
-			// Movies
-			'Show': 'DVD',
-			'TV': 'DVD',
-			'Movie': 'DVD',
-			'TV Show': 'DVD',
-			'Movie Character': 'DVD',
-			'Actor': 'DVD',
-			'Film Director': 'DVD',
-			// Music
-			'Album': 'Music',
-			'Song': 'Music',
-			'Symphony': 'Music',
-			'Band': 'Music',
-			'Musician/Band': 'Music',
-			'Musician': 'Music',
-			'Orchestra': 'Music',
-			// Games
-			'Board Game': 'VideoGames',
-			'Video Game': 'VideoGames',
-			'Games/Toys': 'VideoGames',
-			// Persons
-			'Artist': 'All',
-			'Athlete': 'All',
-			'Comedian': 'All',
-			'Entrepreneur': 'All',
-			'Scientist': 'All',
-			'Wine/Spirits': 'All',
-			'Drink': 'All',
-			'Arts & Humanities Website': 'All'
+			'Journalist': 'Books',
+			'Writer': 'Books'
+			// // Movies
+			// 'Show': 'DVD',
+			// 'TV': 'DVD',
+			// 'Movie': 'DVD',
+			// 'TV Show': 'DVD',
+			// 'Movie Character': 'DVD',
+			// 'Actor': 'DVD',
+			// 'Film Director': 'DVD',
+			// // Music
+			// 'Album': 'Music',
+			// 'Song': 'Music',
+			// 'Symphony': 'Music',
+			// 'Band': 'Music',
+			// 'Musician/Band': 'Music',
+			// 'Musician': 'Music',
+			// 'Orchestra': 'Music',
+			// // Games
+			// 'Board Game': 'VideoGames',
+			// 'Video Game': 'VideoGames',
+			// 'Games/Toys': 'VideoGames',
+			// // Persons
+			// 'Artist': 'All',
+			// 'Athlete': 'All',
+			// 'Comedian': 'All',
+			// 'Entrepreneur': 'All',
+			// 'Scientist': 'All',
+			// 'Wine/Spirits': 'All',
+			// 'Drink': 'All',
+			// 'Arts & Humanities Website': 'All'
 		}
 
 		var filtered: Array<FbLike> = new Array<FbLike>()

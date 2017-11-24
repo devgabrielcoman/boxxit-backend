@@ -74,10 +74,10 @@ export class NetworkRequest implements Request {
 				'batch': '[' + [
 					'{ "method": "GET", "relative_url": "' + id + '/likes?fields=id,name,category,genre%26limit=1000" }',
 					'{ "method": "GET", "relative_url": "' + id + '/books?fields=id,name,category,genre%26limit=1000" }',
-					'{ "method": "GET", "relative_url": "' + id + '/games?fields=id,name,category,genre%26limit=1000" }',
-					'{ "method": "GET", "relative_url": "' + id + '/movies?fields=id,name,category,genre%26limit=1000" }',
-					'{ "method": "GET", "relative_url": "' + id + '/music?fields=id,name,category,genre%26limit=1000" }',
-					'{ "method": "GET", "relative_url": "' + id + '/television?fields=id,name,category,genre%26limit=1000" }'
+					// '{ "method": "GET", "relative_url": "' + id + '/games?fields=id,name,category,genre%26limit=1000" }',
+					// '{ "method": "GET", "relative_url": "' + id + '/movies?fields=id,name,category,genre%26limit=1000" }',
+					// '{ "method": "GET", "relative_url": "' + id + '/music?fields=id,name,category,genre%26limit=1000" }',
+					// '{ "method": "GET", "relative_url": "' + id + '/television?fields=id,name,category,genre%26limit=1000" }'
 				].join(',') + ']'
 			},
 			false
